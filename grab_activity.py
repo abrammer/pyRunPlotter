@@ -1,13 +1,12 @@
 ''' Script to grab activities from strava '''    
 
 import sys
-#sys.path.append('/Users/abrammer/local/strava_python')
 import stravalib
 from stravalib.client import Client
 from configparser import SafeConfigParser
 
 config = SafeConfigParser()
-config.read('/Users/abrammer/local/strava_python/config.yaml')
+config.read('config.yaml')
 
 client = Client()
 authorize_url = client.authorization_url(client_id=config.get('strava','client_id'), redirect_uri='http://localhost:8282/authorized')
